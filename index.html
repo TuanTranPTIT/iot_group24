@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="./icons/fontawesome-free-6.4.0-web/css/all.min.css">
+    <link rel="icon" href="./img/photo_2023-02-16_01-36-26.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <h2>SmartHome G24</h2>
+            </div>
+            <div class="search">
+                <input type="text" name="search" placeholder="Tìm kiếm ở đây">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-bell"></i>
+            <div class="user">
+                <img src="img/photo_2023-02-16_01-36-26.jpg" alt="G24">
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="/index.html">
+                        <i class="fas fa-th-large"></i>
+                        <div id="dashboard">Dashboard</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-user"></i>
+                        <div>Thông tin cá nhân</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/dataflow.html">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <div id="sensorInfo"> Thông tin cảm biến </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-chart-bar"></i>
+                        <div>Chi tiết dự án</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-cog"></i>
+                        <div>Cài đặt</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-question"></i>
+                        <div>Trợ giúp</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <div id="temperature" class="number"></div>
+                        <div class="card-name">Nhiệt độ</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-temperature-high"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div id="humidity" class="number"></div>
+                        <div class="card-name">Độ ẩm</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-umbrella"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div id="voltage" class="number"></div>
+                        <div class="card-name">Điện áp</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="charts">
+                <!-- <div class="chart">
+                    <h2>Đồ thị biểu diễn trạng thái cảm biến</h2>
+                    <div>
+
+                        <canvas id="lineChart" style="width:100%;max-width:800px"></canvas>
+                    </div>
+                </div> -->
+                <div class="chart">
+                    <h2>Điều khiển thiết bị</h2>
+                    <div class="equipment-home">
+                        <div class="equipment my-fan">
+                            <h3 class="equipment__header">Quạt thông minh</h3>
+                            <div class="equipment_body">
+                                <div class="switch-container" id="fan">
+                                    <label class="switch">
+                                        <input type="checkbox" id="toggle-fan">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <i class="equipment_body-sticker fa-solid fa-fan"></i>
+                            </div>
+                        </div>
+                        <div class="equipment my-led">
+                            <h3 class="equipment__header">Đèn</h3>
+                            <div class="equipment_body">
+                                <div class="switch-container" id="led">
+                                    <label class="switch">
+                                        <input type="checkbox" id="toggle-led">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <i class="equipment_body-sticker  fa-solid fa-lightbulb"></i>
+                            </div>
+                        </div>
+                        <div class="equipment my-heater">
+                            <h3 class="equipment__header">Máy sưởi</h3>
+                            <div class="equipment_body">
+                                <div class="switch-container" id="heater">
+                                    <label class="switch">
+                                        <input type="checkbox" id="toggle-heater">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <i class="equipment_body-sticker fa-regular fa-sun"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <!-- <script src="chart1.js"></script> -->
+    <script src="paho.javascript-1.0.3/paho-mqtt.js"></script>
+    <!-- <script src="paho.mqtt.javascript-master/src/paho-mqtt.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.js"></script> -->
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
